@@ -1,16 +1,25 @@
+// docs/.vitepress/config.js
 import { defineConfig } from 'vitepress'
+
 export default defineConfig({
-  title: '项目文档',
-  description: '基于 VitePress 的知识库模板',
+  title: '菜单',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' }
+      { text: '指南', link: '/guide/' },
     ],
     sidebar: {
       '/guide/': [
-        { text: '开始', link: '/guide/' }
+        { text: 'Guide Home', link: '/guide/' },
+        { text: 'Setup', link: '/guide/setup' }
+      ],
+      '/': [
+        { text: '首页', link: '/' },
+        { text: '公共', link: '/public/index.md' }
       ]
+    },
+    search: {
+      provider: 'local'
     }
-  }
+  },
 })
